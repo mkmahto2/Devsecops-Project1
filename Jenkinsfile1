@@ -15,7 +15,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'master', url: 'https://github.com/AWS-AZURE-Bootcamp5/Devsecops-Project1.git'
+                git branch: 'master', url: 'https://github.com/mkmahto2/Devsecops-Project1'
             }
         }
         stage("Sonarqube Analysis "){
@@ -54,8 +54,8 @@ stage("Docker Build & Push"){
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
                        sh "docker build -t devsecops_ad ."
-                       sh "docker tag devsecops_ad praveensingam1994/devsecops_ad:latest "
-                       sh "docker push praveensingam1994/devsecops_ad:latest "
+                       sh "docker tag devsecops_ad mkmahto7/devsecops_ad:latest "
+                       sh "docker push mkmahto7/devsecops_ad:latest "
                     }
                 }
             }
